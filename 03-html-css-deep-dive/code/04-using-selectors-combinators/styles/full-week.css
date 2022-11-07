@@ -1,5 +1,5 @@
 header {
-    margin-bottom: 64px;
+  margin-bottom: 64px;
 }
 
 h1 {
@@ -9,12 +9,15 @@ h1 {
 }
 
 #description {
-    margin-bottom: 36px;
+  margin-bottom: 36px;
 }
 
-/* header p {
-  margin-bottom: 36px;
-} */
+header p {
+  /* margin-bottom: 36px; */
+  color: yellow;
+}
+
+/* all descendants p in the header */
 
 a {
   padding: 12px 48px;
@@ -45,15 +48,18 @@ li {
 }
 
 h2 {
-    color: rgb(78, 13, 5);
-    font-family: 'Oswald', sans-serif;
+  color: rgb(78, 13, 5);
+  font-family: 'Oswald', sans-serif;
 }
 
 main p {
-    margin: 12px;
-    color: rgb(71, 29, 22);
+  /*  all paragraphs inside the main element */
+  margin: 12px;
+  /* color: rgb(71, 29, 22); */
+  color: turquoise;
+  font-weight: bold;
 }
 
 .highlight-goal {
-    background-color: rgb(226, 115, 101);
+  background-color: rgb(226, 115, 101);
 }

@@ -1,0 +1,53 @@
+html {
+  margin: 50px
+}
+
+div {
+  background-color: #c7c7c7;
+  padding: 20px;
+  text-align: center;
+}
+
+p {
+  color: black;
+  padding: 50px;
+  margin: 0;
+}
+
+#container {
+  background-color: #521751;
+  /* position: relative; */
+}
+
+#container p {
+  color: white;
+}
+
+#one {
+  background-color: #943092;
+}
+
+#two {
+  background-color: #c95bc7;
+  /* position: relative; */
+  /* position: relative; */
+  /* other values: static */
+  /* top: 20px; */
+  /* bottom: 20px; */
+  /* bottom 20px and top -10px are the same */
+  /* right: 40px */
+  position: absolute;
+  top: 0;
+  /* it looks as if the element two is now relative to the HTML element (in fact it will be positioned relative to the first ancestor that has position relative applied */
+  /* if you add position relative to its parent element, then it becomes relative to its parent element and not to the HMTL */
+  /* and if you remove the margin from the HTML element it would mean that this element is relative to the body */
+  /* to make a sticky navigation bar you can mae position: fixed; it sticks to the visible area of our page (i.e. the viewport) */
+}
+
+/* NB with position static we keep elements in the default document flow and we cannot change the position with top, bottom, left. right */
+/* NB with position relative, elements are still part of this document flow, but with top bottom left right we can moe them */
+/* NB with position absolute you take an element out of the document flow and you can freely position it with top, bottom, left, right */
+
+#three {
+  background-color: #dd61db;
+}
