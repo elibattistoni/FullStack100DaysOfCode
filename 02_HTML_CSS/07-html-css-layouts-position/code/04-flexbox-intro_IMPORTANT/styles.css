@@ -3,11 +3,12 @@
   padding: 10px;
   width: 600px;
   display: flex;
+  /* IMPORTANT */
   /* this is done to position the two elements along a row instead of along a column */
   /* the "flex container" will make the two elements inside "flex items" */
   /* flex-direction: row; */
   /* flex-wrap: wrap; */
-  /*  if you leave flex-wrap: wrap and remove the width, then if you decrease the size of the window they will adapt */
+  /* if you leave flex-wrap: wrap and remove the width, then if you decrease the size of the window they will adapt */
   align-items: center;
   justify-content: space-between;
 }

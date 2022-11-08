@@ -48,3 +48,68 @@
 #hero-content a:hover {
   background-color: rgb(255, 238, 0);
 }
+
+#highlights {
+  padding: 24px 0;
+  background: linear-gradient(0deg, rgb(227, 255, 253), rgb(202, 243, 240));
+  /* background: linear-gradient(45deg, rgb(227, 255, 253), rgb(0, 233, 217)); */
+  /* background: linear-gradient(0deg, rgb(227, 255, 253), rgb(0, 233, 217)); */
+  /* background: linear-gradient(90deg, rgb(227, 255, 253), rgb(0, 233, 217)); */
+  /* background: linear-gradient(1800deg, rgb(227, 255, 253), rgb(0, 233, 217)); */
+}
+
+#highlights h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 40px;
+  color: rgb(59, 65, 64);
+  margin: 24px 0;
+}
+
+#destinations {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 40px;
+  justify-content: space-evenly;
+}
+
+.destination {
+  margin: 0 20px;
+  text-transform: uppercase;
+}
+
+.destination img {
+  height: 200px;
+  width: 100%;
+  box-shadow: 2px 4px 8px rgb(68, 67, 67);
+  border-radius: 10px;
+  /* object-fit: fill; */
+  /* this is default and the image is distorted to fit in the container */
+  /* object-fit: contain; */
+  /* the aspect ratio remains but it will be refit and white spots might remain */
+  object-fit: cover;
+  /* as much image as possible while fitting the container */
+}
+
+.destination p {
+  text-align: center;
+  font-size: 24px;
+  color: rgb(124, 123, 123);
+  margin: 20px 0;
+}
+
+.destination strong {
+  color: rgb(0, 160, 117)
+}
+
+/* 
+~ margin collapsing does not occur only between adjacent elements, but also in parent-child relationship
+~ why? because we have the parent (which has no paggind nor margin applied) and inside this parent we have a child which has a margin
+~ this causes the collapsing of the margin and adds the margin present in the child element, to the parent element
+this has been solved with this:
+#highlights {
+  padding: 24px;
+}
+
+*/
