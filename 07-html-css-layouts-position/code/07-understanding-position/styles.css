@@ -38,10 +38,19 @@ p {
   /* right: 40px */
   position: absolute;
   top: 0;
+  left: 0;
   /* it looks as if the element two is now relative to the HTML element (in fact it will be positioned relative to the first ancestor that has position relative applied */
   /* if you add position relative to its parent element, then it becomes relative to its parent element and not to the HMTL */
   /* and if you remove the margin from the HTML element it would mean that this element is relative to the body */
   /* to make a sticky navigation bar you can mae position: fixed; it sticks to the visible area of our page (i.e. the viewport) */
+  /* the % value is relative to another element, typically the parent element  */
+  width: 100%;
+  box-sizing: border-box;
+  /* by default, the percentage value of the width refers to the entire width of the parent element, and this width is applied to the content of our element */
+  /* ti fux this, change the default value of box sizing (the default value is content-box) to border-box */
+  /* you have to decide whether the percentage has to include the padding and the border */
+  /* this works also for borders */
+  /* the border box value only applies to content, padding, and border */
 }
 
 /* NB with position static we keep elements in the default document flow and we cannot change the position with top, bottom, left. right */
