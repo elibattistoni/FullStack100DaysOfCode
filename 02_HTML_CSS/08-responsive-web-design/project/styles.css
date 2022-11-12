@@ -26,6 +26,28 @@ a {
   text-transform: uppercase;
 }
 
+/* ======== HAMBURGER BUTTON ============ */
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 3rem;
+  height: 3rem;
+}
+
+.menu-btn span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+}
+
+/* NB span elements are inline elements; inline elements occupy as much space as needed;
+and it they do not contain anything, they are not displayed 
+therefore set display:block (which overrides the display:inline
+*/
+/* ====================================== */
+
+
 #main-header ul {
   list-style: none;
   display: flex;
@@ -45,6 +67,46 @@ a {
 #main-header nav a:hover {
   color: rgb(228, 163, 44);
 }
+
+/* ======== SIDE DRAWER ============ */
+#side-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(29, 26, 27);
+  display: none;
+}
+
+#side-drawer:target {
+  /* the target selector specifically checks whether the id #side-drawer is added to the url in the browser */
+  /* and if this is hte case, then: */
+  display: block;
+}
+
+#side-drawer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 4rem 1rem;
+}
+
+#side-drawer li {
+  margin: 1rem 0;
+}
+
+#side-drawer a {
+  color: rgb(253, 239, 213);
+  font-size: 2rem;
+}
+
+/* NB with the target pseudo selector we make sure that once a specific id is added to the url, certain css styles are applied */
+
+/* ================================= */
+
 
 main h1 {
   text-align: center;
@@ -140,3 +202,39 @@ IMPORTANT em and rem, always refer to the font size property, they do not refer 
 · DESKTOP COMPUTER: 1200px
 · TV: >1200px
 */
+
+
+/*= for design desktop first, mobile second, in which you go from big screens to small screens, use max-width */
+/*= for design mobile first, desktop second, in which you go from small screens to big screens, use min-width */
+/* with media you define breakpìing points in which you want your layout to change */
+
+
+/*= for DESKTOP TO MOBILE --> i.e. when the screen becomes 768px wide and less (lower values), apply this style */
+@media (max-width: 48rem) {
+  /* NB 48rem === 768px */
+
+  main h1 {
+    font-size: 1.5rem;
+  }
+
+  #main-header nav {
+    /* visibility: hidden; */
+    display: none;
+  }
+
+  #latest-products ul {
+    grid-template-columns: 100%;
+    /* 100% === 1fr */
+  }
+}
+
+
+/* = for MOBILE to DESKTOP --> i.e. when the screen becomes 768px wide and more (higher values), apply this style */
+/* @media (min-width: 768px) {
+  #latest-products ul {
+    grid-template-columns: 100%;
+  }
+} */
+
+/* IMPORTANT you should put the MEDIA QUERY after the elements that the query changes (remember the cascading nature of css */
+/* / first, define their normal behavior, then put the media query */
