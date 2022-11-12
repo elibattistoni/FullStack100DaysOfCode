@@ -1,28 +1,84 @@
 body {
   background: linear-gradient(30deg, rgb(77, 77, 77), rgb(58, 58, 58));
+  color: rgb(68, 68, 68);
+}
+
+#page-logo a {
+  color: rgb(183, 230, 235)
 }
 
 header {
   position: static;
 }
 
+header a {
+  color: rgb(183, 230, 235)
+}
+
+header nav a:hover {
+  background-color: rgb(183, 230, 235);
+  color: rgb(59, 59, 59)
+}
+
 main ul {
-  width: 800px;
-  margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto 50px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 10px;
 }
 
 main li {
   display: flex;
   background-color: white;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0, 2);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 1);
   border-radius: 6px;
+  overflow: hidden;
 }
+
+/* NB the image exceeds the corners (border) of the container; with the property 
+- overflow you can control this behavior, this overflow, i.e. how an element which exceeds the dimension of the container, is behaving 
+- and this property is applied to the container itself (not to the child element), because typically you want all elements that are part of your container to behave the same way*/
+/* overflow: visible is the default behavior */
 
 main li img {
   width: 300px;
   height: 280px;
+  object-fit: cover;
 }
 
 .item-content {
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-content h2 {
+  margin: 0;
+}
+
+main ul li:nth-of-type(3) {
+  grid-column: 1 / span 2;
+}
+
+/* .item-content div:last-child {
+  align-self: flex-end;
+} */
+
+/* same result as: */
+.actions {
+  text-align: right;
+}
+
+.actions a {
+  text-decoration: none;
+  padding: 6px;
+  color: rgb(22, 211, 228);
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.actions a:hover {
+  background-color: rgb(235, 253, 255);
 }

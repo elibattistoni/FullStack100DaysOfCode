@@ -1,0 +1,142 @@
+/* NB usually in browser the html element has a default font size of 16 px; and rem units refer to this font size */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  background-color: rgb(44, 41, 38);
+}
+
+a {
+  text-decoration: none;
+}
+
+#main-header {
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(29, 26, 24);
+  padding: 0 5%;
+}
+
+#logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(238, 164, 80);
+  text-transform: uppercase;
+}
+
+#main-header ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+#main-header li {
+  margin: 0 1rem;
+}
+
+#main-header nav a {
+  color: rgb(185, 131, 31);
+  font-size: 1.25rem;
+}
+
+#main-header nav a:hover {
+  color: rgb(228, 163, 44);
+}
+
+main h1 {
+  text-align: center;
+  color: rgb(238, 164, 80);
+  font-size: 3rem;
+}
+
+#latest-products {
+  width: 80%;
+  margin: 2rem auto;
+}
+
+#latest-products ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.food-item {
+  background-color: rgb(228, 206, 182);
+  border-radius: 6px;
+  /* NB the border radius is a property in which we should stick to the pixels values (otherwise there might be unwanted behavior) i.e. it should not scale if the user makes the text bigger */
+  overflow: hidden;
+}
+
+.food-item img {
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.food-item-content {
+  padding: 1rem;
+  text-align: center;
+}
+
+.btn {
+  background-color: rgb(228, 157, 44);
+  color: white;
+  border-radius: 4px;
+  padding: 0.5rem 1.5rem;
+}
+
+.btn:hover {
+  background-color: rgb(221, 134, 34);
+}
+
+
+/*
+= WORKING WITH FONT SIZES: pixels vs dynamic units
+
+= 1. PIXELS
+Pixels are not scalable
+Pixels have limited user focus: using pixels takes away some of the customization options that a user has in the browser
+i.e. the browser integrated options for the users (e.g. setting a larger or smaller font size) do not work on text whose font size has been defined in px
+= 2. DYNAMIC UNITS: percentages, ephemeral (em), root ephemeral (rem)
+/ % --> Percentage is relative to the parent element size; disadvantage: harm to manage due to the cascading nature
+/ em --> it is relative to the font size of another element (the parent element NB if you work in the context of font-size! ); disadvantage: harm to manage due to the cascading nature
+/ rem --> it it relative to the font size of the root element (the root element == the html element)
+NB in the context of font size, 50% is equal to 0.5em, 100% is equal to 1em, 200% is equal to 2em
+NB rem is relative to the root element font size: the size is always calculated depending on the root element size, and if we don't add a specific size
+NB to the root element, then this size is always relative to the current setting that the user has in the browser
+
+
+= WORKING WITH OTHER PROPERTIES (not font size) e.g. padding, margin
+e.g. % percentage for padding of an element is relative to the width of the parent element
+NB the % value refers to other properties! i.e. when using the padding percentage unit, it refers to the width of the parent element
+NB for em and rem this is not the case!!
+NB however padding: 10% is NOT EQUAL to passing: 0.1em !!!
+IMPORTANT em and rem, always refer to the font size property, they do not refer to other properties (i.e. 0.1em for the padding, it is 0.1 === 10% of the FONT SIZE OF THE ELEMENT ITSELF)
+/ padding 0.1rem === 10% of the font size of the root element
+
+== MEDIA QUERIES
+# Responsive web design is all about media queries
+@media (min width or max-width: 1200px) {
+  p {
+    font-size: 2rem;
+  }
+}
+# this tells the browser that we have a media query, i.e. that we want to gather information (or query information) about the media type, i.e. the device and the specifications that the person browsing our website is using
+# and if the device type meets certain criteria, then the code we define in this media query should be executed
+# you tell the broswer at which device width this media query should be executed and then you add the code that should be executed if this query becomes active
+
+== COMMON BREAKPOINTS FOR MEDIA QUERIES
+# PORTRAIT
+· SMARTPHONE: 480px
+· TABLET: 768px
+# LANDSCAPE
+· NOTEBOOK: 1024px
+· DESKTOP COMPUTER: 1200px
+· TV: >1200px
+*/

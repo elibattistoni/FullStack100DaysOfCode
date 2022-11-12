@@ -1,0 +1,65 @@
+main {
+  background-color: rgb(82, 23, 81);
+  padding: 10px;
+  width: 1000px;
+  margin: auto;
+}
+
+ul {
+  background-color: rgb(250, 146, 63);
+  list-style: none;
+  width: 800px;
+  /*  width is the width of the grid container */
+  margin: 10px auto;
+  padding: 10px;
+  display: grid;
+  /* grid-template-columns: 400px 400px; */
+  /* grid-template-columns: 1fr 400px; */
+  /* grid-template-columns: 2fr 1fr; */
+  grid-template-columns: 1fr 1fr;
+  /* here we have to define a value (i.e. width) of each column inside the grid */
+  /* here use fractions, not pixels */
+  /* 2fr 1fr this means that the grid will be divided into 3 fractions, 2 fractions are applied to the first column and 1 fraction to the second column */
+  /* nb you can specify gapm between rows and columns */
+  gap: 10px 400px;
+  /* gap: gap-between-rows gap-between-columns */
+}
+
+li {
+  background-color: rgb(238, 212, 192);
+  text-align: center;
+  width: 200px;
+  margin: 20px auto;
+}
+
+li:first-of-type {
+  background-color: yellow;
+}
+
+li:nth-of-type(3) {
+  background-color: green;
+  grid-column: 1 / 3;
+  /* position column start / position column end 1 / 3 to span all two columns */
+  /* NB this is not the only way we can say to an element that it should occupy two columns */
+}
+
+li:nth-of-type(6) {
+  background-color: purple;
+  grid-column: 1 / span 2;
+  /* span to indicate how many columns it should occupy */
+  /* 1 / span 1 it makes it remain where it is (span 1 == occupy one columns only) */
+  /* 1 / span 2 == occupy two columns */
+}
+
+/* NB
+Flexbox is perfect for one dimensional layouts, i.e. for aligning elements in row or column.
+The CSS GRID is perfect for two dimensional layouts
+i.e. whenever we want to create a layout in which we have to control both rows and columns
+
+default block alignment: each element is sitting below the other one
+
+the grid follows the core logic of flexbox: we create a container (grid container)
+which is the parent of the items inside the grid
+and this container will allow us to define what should happen with the elements nested in it
+(the ul element has to be the grid container)
+*/
