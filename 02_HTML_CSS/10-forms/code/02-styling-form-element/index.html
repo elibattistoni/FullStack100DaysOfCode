@@ -8,6 +8,13 @@
   </head>
   <body>
     <form action="/" method="GET">
+      <!-- NB the action attribute allows you to define the URL (the path) this request should be sent to -->
+      <!--  by default, it sends the request to the same URL that was used for serving this page (and that is why, if no action nor method are specifies, this URL does not change when we click submit) -->
+      <!-- e.g if you write action="/user-data" it will send the form data to the domani/user-data (the domain and the port / path) TODO check not sure -->
+      <!-- the method attribute allows to choose the type of HTTP request that should be sent to the server -->
+      <!-- NB with POST method -- in the console network you will see form data and the data will be part of the request itself -->
+      <!-- with the GET method you will see query data and a ? in the url and the information is added in the url -->
+      <!-- / is by default index.html -->
       <input type="text" name="user-name" />
       <button>Submit</button>
     </form>

@@ -1,0 +1,19 @@
+div {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  color: white;
+}
+
+#first {
+  background-color: rgb(55, 117, 209);
+  z-index: 1;
+  position: relative;
+}
+
+#second {
+  background-color: rgb(233, 137, 59);
+  position: absolute;
+  top: 0;
+  left: 0;
+}

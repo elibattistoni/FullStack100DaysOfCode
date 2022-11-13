@@ -33,6 +33,7 @@ a {
   justify-content: space-around;
   width: 3rem;
   height: 3rem;
+  display: none;
 }
 
 .menu-btn span {
@@ -105,6 +106,14 @@ therefore set display:block (which overrides the display:inline
 
 /* NB with the target pseudo selector we make sure that once a specific id is added to the url, certain css styles are applied */
 
+#side-drawer header {
+  height: 5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 5%;
+}
+
 /* ================================= */
 
 
@@ -144,6 +153,10 @@ main h1 {
 .food-item-content {
   padding: 1rem;
   text-align: center;
+}
+
+.food-item h2 {
+  margin: 0 0 1rem 0;
 }
 
 .btn {
@@ -213,19 +226,24 @@ IMPORTANT em and rem, always refer to the font size property, they do not refer 
 @media (max-width: 48rem) {
   /* NB 48rem === 768px */
 
-  main h1 {
-    font-size: 1.5rem;
-  }
-
   #main-header nav {
     /* visibility: hidden; */
     display: none;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+
+  main h1 {
+    font-size: 1.5rem;
   }
 
   #latest-products ul {
     grid-template-columns: 100%;
     /* 100% === 1fr */
   }
+
 }
 
 

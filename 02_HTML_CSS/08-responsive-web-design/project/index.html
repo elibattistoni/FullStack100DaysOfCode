@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header id="main-header">
@@ -25,16 +25,37 @@
           </li>
         </ul>
       </nav>
-    
-      <!-- hamburger button -->
+
+      <!-- hamburger button when the side drawer is not active/visible -->
       <a href="#side-drawer" class="menu-btn">
         <span></span>
         <span></span>
         <span></span>
       </a>
-    
     </header>
 
+    <!-- this will contain the side drawer -->
+    <aside id="side-drawer">
+      <header>
+        <!-- hamburger button when the side drawer is active/visible -->
+        <a href="#" class="menu-btn">
+          <!-- NB href # because in this way it will redirect us to the top of the starting page -->
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </header>
+      <nav>
+        <ul>
+          <li>
+            <a href="">Browse Meals</a>
+          </li>
+          <li>
+            <a href="">My Orders</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
 
     <main>
       <h1>Browse Our Delicious Meals</h1>
@@ -67,20 +88,5 @@
         </ul>
       </section>
     </main>
-
-    <!-- this will contain the side drawer -->
-    <aside id="side-drawer">
-      <nav>
-        <ul>
-          <li>
-            <a href="">Browse Meals</a>
-          </li>
-          <li>
-            <a href="">My Orders</a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-
   </body>
 </html>
