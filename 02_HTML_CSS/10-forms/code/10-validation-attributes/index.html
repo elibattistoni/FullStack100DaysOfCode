@@ -17,12 +17,15 @@
     </header>
     <main>
       <form action="/" method="GET">
+        <!-- here you could add the attribute novalidate to not make the form validate -->
+        <!-- <form novalidate> -->
         <section>
           <h2>Your personal details</h2>
           <ul>
             <li>
               <label for="username">Your name</label>
-              <input type="text" name="user-name" id="username" required />
+              <!-- NB required -->
+              <input type="text" name="user-name" id="username" value="Elisa questo è come se fosse user input" required />
             </li>
             <li>
               <label for="useremail">Your email address</label>
