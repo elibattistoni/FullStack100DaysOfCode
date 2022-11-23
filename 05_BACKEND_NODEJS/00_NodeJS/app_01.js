@@ -23,7 +23,7 @@ with netlify drop, we used a hosting provider that created a web server and host
 
 "server side code" i.e. code that runs on a remote machine, which once you deploy your application, will be exposed to the worldwide web
 and which will handle incoming requests from your visitors: this is what we need to write ourselves with NodeJS
-so that in a second ste we can have full control over how requests are parsed, which data is extracted, and which data is sent back as a response
+so that in a second step we can have full control over how requests are parsed, which data is extracted, and which data is sent back as a response
 because we no longer just want to send back HTML files automatically
 the idea of using NodeJS is that we have more control over what happens on the server
 
@@ -68,7 +68,7 @@ actually by defualt you typically use 443 because that uses SSL which sends the 
 the ports 80 and 443 are the default ports exposed (= opened) by all web servers to handle incoming traffic (= requests)
 but when working with Node JS and creating your own server, you need to let Node JS know on which port you want to listen for incoming requests
 the first parameter to .listen() is the port number and typically we use something like 3000, which is a port that typically is not opened
-and during development, for playing around with our server and test whether everything works, we want to use such non default ports so that we don't clask with any other services
+and during development, for playing around with our server and test whether everything works, we want to use such non default ports so that we don't clash with any other services
 that might be running on our local dev machine
 NB if we want to deploy the code and move it to a real remote machine, which we rented from some hosting provider, we would swap this 3000 with 80 or 443
 
