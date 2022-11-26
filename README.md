@@ -13,3 +13,6 @@ Practive:
   - Section 12: exercises on advanced DOM JS
   - Section13: exercises on JS
   - Section 14: TODO tic tac toe game IMPORTANT IMPORTANT IMPORTANT for portfolio + NEW CONCEPTS
+
+
+TODO sistemare tutto il codice
