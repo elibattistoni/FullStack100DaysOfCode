@@ -119,6 +119,8 @@ app.post("/recommend", function (request, response) {
 //==============================================================================
 // In the restaurant.ejs file you can insert dynamic content with
 /// <%= numberOfRestaurants %>
+// NB the equal sign performs "escaping": it escapes the value that it outputs, i.e. it translates it into text
+// useful for outputting user-generated content (and not fit for including some HTML code that we store in a different file)
 // then here, in the request handler that uses that file:
 
 // route for showing a list of restaurants
@@ -148,7 +150,23 @@ app.get("/restaurants", function (request, response) {
 //==============================================================================
 //# Render conditional content
 //==============================================================================
-// cfr app.js
+// cfr restaurants.ejs
+
+//==============================================================================
+//# Including partial content
+//==============================================================================
+// we can use templating engine to make our life easier i.e. to replace parts of code in the .ejs file (html) that are shared among several files
+// i.e. the header and aside part are the same in every file
+/// EJS has a feature called includes that does this
+// NB an include is basically another EJS file that contains a part of a page which you then potentially can use on multiple pages
+// NB and you can use includes to split your big HTML files into smaller & more manageable pieces
+/// create a folder "inlcudes" inside the "views" folder (NB the name does not have to be includes but it is a common choice)
+// in this folder you can create a header.ejs file with the content of the header
+// in order to include a piece of html (ejs) into another ejs you use:
+/// <%- %>
+/// the injected content will be treated and rendered as HTML content (not raw text like with <%= %>)
+//# <%- include("includes/header", {}) %>
+// the second parameter is optional and it is an object with extra data that the included file needs in order to be rendered
 
 //==============================================================================
 //# Listen to a specific port
