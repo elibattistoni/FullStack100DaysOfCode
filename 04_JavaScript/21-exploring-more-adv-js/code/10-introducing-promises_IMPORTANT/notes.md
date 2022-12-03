@@ -1,0 +1,3 @@
+Certain operations like reading a file or talking to a db are typically solved with asynchronous code.
+
+Sometimes you have multiple asynchronous tasks that depend on each other, e.g. we could be reading some file content and then start another asytnc task that sends the data to a DB. This can turn quickly into the callback hell. So there is an alternative way of dealing with asynchrnous code: promises
