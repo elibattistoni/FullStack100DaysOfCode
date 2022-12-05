@@ -1,0 +1,14 @@
+<article class="post-item">
+  <h2><%= post.title %></h2>
+  <p class="post-item-author">By <%= post.author_name %></p>
+  <p><%= post.summary %></p>
+  <div class="post-actions">
+    <!-- button and no link because you want to send a post request to the server to delete one element -->
+    <!-- NB the button will automatically submit the form and therefore the post request will be sent to that path -->
+    <form action="/posts/<%= post.id %>/delete" method="POST"><button class="btn btn-alt">Delete Post</button></form>
+    <a href="/posts/<%= post.id %>/edit">Edit Post</a>
+    <!-- NB the one above is a get request, POST and GET don't trigger the same routes even if their name is the same, because they are different types of requests -->
+    <!-- This is because the get request in post-item.ejs ("/posts/<%= post.id %>/edit") is the same as the post request in update-post.ejs (action="/posts/<%= post.id %>/edit") -->
+    <a class="btn" href="/posts/<%= post.id %>">View Post</a>
+  </div>
+</article>
